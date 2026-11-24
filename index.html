@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky-nest Singapore | Flexible Co-Living for Professionals, Nomads &amp; Students</title>
+    <meta name="description" content="Furnished private rooms and studios in Singapore with co-working spaces, high-speed Wi-Fi and a friendly community. Compare Short-Term, Standard, Premium and Custom packages and send an enquiry.">
+    <!-- Font Awesome Icons -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Styles: Tailwind CSS (compiled) + custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 font-sans flex flex-col min-h-screen">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:bg-white focus:text-emeraldBrand-700 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg font-bold">Skip to main content</a>
+
+    <!-- HEADER NAVBAR -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchTab('home')">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-extrabold tracking-tight text-slate-900 leading-none">Sky<span class="text-emeraldBrand-600">-nest</span></span>
+                    <span class="text-[10px] tracking-widest text-emeraldBrand-800 font-semibold uppercase">Singapore</span>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-semibold text-slate-600 text-sm">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-btn py-1 border-b-2 border-transparent hover:text-emeraldBrand-600 transition">Home</button>
+                <button onclick="switchTab('checkout')" id="nav-checkout" class="nav-btn py-1 border-b-2 border-transparent hover:text-emeraldBrand-600 transition">Packages</button>
+                <button onclick="switchTab('contact')" id="nav-contact" class="nav-btn py-1 border-b-2 border-transparent hover:text-emeraldBrand-600 transition">Contact</button>
+                <button onclick="switchTab('about')" id="nav-about" class="nav-btn py-1 border-b-2 border-transparent hover:text-emeraldBrand-600 transition">About</button>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:block">
+                <button onclick="switchTab('checkout')" class="bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-bold px-6 py-2.5 rounded-xl transition shadow-lg shadow-emeraldBrand-600/20 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-layer-group text-xs" aria-hidden="true"></i>
+                    <span>Explore Packages</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="text-slate-700 hover:text-emeraldBrand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-emeraldBrand-600 rounded-lg p-2 text-xl">
+                    <i id="menu-icon" class="fa-solid fa-bars-staggered" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2 shadow-xl">
+            <button onclick="switchTab('home')" data-tab="home" class="mobile-nav block w-full text-left py-2 font-medium text-slate-700 border-b border-slate-100">Home</button>
+            <button onclick="switchTab('checkout')" data-tab="checkout" class="mobile-nav block w-full text-left py-2 font-medium text-slate-700 border-b border-slate-100">Packages</button>
+            <button onclick="switchTab('contact')" data-tab="contact" class="mobile-nav block w-full text-left py-2 font-medium text-slate-700 border-b border-slate-100">Contact</button>
+            <button onclick="switchTab('about')" data-tab="about" class="mobile-nav block w-full text-left py-2 font-medium text-slate-700 border-b border-slate-100">About</button>
+            <button onclick="switchTab('checkout')" class="block w-full text-center mt-3 bg-emeraldBrand-600 text-white font-semibold py-2.5 rounded-xl shadow">Explore Packages</button>
+        </div>
+    </header>
+
+    <main id="main" class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- 1. HOME PAGE VIEW                          -->
+        <!-- ========================================== -->
+        <div id="page-home" class="page-tab active">
+            <!-- Hero Container -->
+            <div class="relative min-h-[88vh] bg-cover bg-center flex items-center justify-center p-4 sm:p-8" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1920&q=80');">
+                <div class="absolute inset-0 bg-slate-900/40"></div>
+                
+                <!-- Hero Glass Overlay (Figma Hero Component) -->
+                <div class="relative z-10 w-full max-w-6xl glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl my-6">
+                    <div class="text-center max-w-3xl mx-auto mb-8">
+                        <span class="bg-emeraldBrand-600/30 text-emeraldBrand-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emeraldBrand-400/30">Singapore Co-Living Spaces</span>
+                        <h1 class="text-3xl sm:text-5xl font-extrabold text-white mt-3 tracking-tight">Flexible Co-Living in Singapore</h1>
+                        <p class="text-slate-200 mt-2 text-sm sm:text-base">Fully furnished private rooms and studios with co-working spaces, high-speed Wi-Fi and a friendly community &mdash; for young professionals, digital nomads and international students.</p>
+                    </div>
+
+                    <div class="mb-4 text-center">
+                        <h2 class="text-lg font-semibold text-emeraldBrand-100 tracking-wide uppercase text-xs">Our three stay options</h2>
+                    </div>
+
+                    <!-- Room Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Room Card 1 -->
+                        <div class="bg-white/95 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 flex flex-col group border border-white/50">
+                            <div class="h-48 relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Premium studio apartment with a double bed and large windows" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 right-3 bg-white text-emerald-900 font-extrabold text-xs px-3 py-1.5 rounded-lg border border-emerald-200 shadow-lg ring-1 ring-white/70">from S$199.90 / night</span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-gradient-to-b from-white to-slate-50">
+                                <div>
+                                    <div class="flex items-center gap-1 text-goldAccent-500 text-xs mb-1">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="text-slate-500 ml-1">(4.9 sample)</span>
+                                    </div>
+                                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-emeraldBrand-600 transition">Premium Studio Apartment</h3>
+                                    <span class="inline-flex mt-2 rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-amber-800">Premium Stay</span>
+                                    <p class="text-xs text-slate-600 mt-1 line-clamp-2">Your own studio with weekly cleaning, utilities and internet included, plus access to every facility.</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-200/80 flex justify-between items-center">
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Info: 1&ndash;2 guests &bull; Studio</span>
+                                    <button onclick="choosePackage('premium')" aria-label="Enquire about the Premium Studio Apartment" class="text-xs bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-semibold px-3.5 py-2 rounded-lg transition shadow">Enquire</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room Card 2 -->
+                        <div class="bg-white/95 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 flex flex-col group border border-white/50">
+                            <div class="h-48 relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Standard private bedroom with a double bed and bedside lamps" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 right-3 bg-white text-emerald-900 font-extrabold text-xs px-3 py-1.5 rounded-lg border border-emerald-200 shadow-lg ring-1 ring-white/70">from S$129.90 / night</span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-gradient-to-b from-white to-slate-50">
+                                <div>
+                                    <div class="flex items-center gap-1 text-goldAccent-500 text-xs mb-1">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star text-slate-300"></i>
+                                        <i class="fa-regular fa-star text-slate-300"></i>
+                                        <span class="text-slate-500 ml-1">(3.8 sample)</span>
+                                    </div>
+                                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-emeraldBrand-600 transition">Standard Private Bedroom</h3>
+                                    <span class="inline-flex mt-2 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-slate-600">Standard Stay</span>
+                                    <p class="text-xs text-slate-600 mt-1 line-clamp-2">A private bedroom in a shared apartment, fortnightly cleaning, utilities included and co-working access.</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-200/80 flex justify-between items-center">
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Info: 1 guest &bull; Private room</span>
+                                    <button onclick="choosePackage('standard')" aria-label="Enquire about the Standard Private Bedroom" class="text-xs bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-semibold px-3.5 py-2 rounded-lg transition shadow">Enquire</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Room Card 3 -->
+                        <div class="bg-white/95 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 flex flex-col group border border-white/50">
+                            <div class="h-48 relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Furnished short-term room with a sofa seating area" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-3 right-3 bg-white text-emerald-900 font-extrabold text-xs px-3 py-1.5 rounded-lg border border-emerald-200 shadow-lg ring-1 ring-white/70">from S$89.00 / night</span>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-gradient-to-b from-white to-slate-50">
+                                <div>
+                                    <div class="flex items-center gap-1 text-goldAccent-500 text-xs mb-1">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="text-slate-500 ml-1">(4.95 sample)</span>
+                                    </div>
+                                    <h3 class="font-bold text-slate-900 text-lg group-hover:text-emeraldBrand-600 transition">Short-Term Furnished Room</h3>
+                                    <span class="inline-flex mt-2 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-emerald-800">Short-Term Stay</span>
+                                    <p class="text-xs text-slate-600 mt-1 line-clamp-2">Flexible 1&ndash;4 week booking in a furnished room, utilities included, limited shared facilities.</p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-200/80 flex justify-between items-center">
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Info: 1 guest &bull; 1&ndash;4 weeks</span>
+                                    <button onclick="choosePackage('short')" aria-label="Enquire about the Short-Term Furnished Room" class="text-xs bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-semibold px-3.5 py-2 rounded-lg transition shadow">Enquire</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Co-Living Facilities & Community Events (added after review feedback FB3/FB12) -->
+            <section id="home-facilities" class="bg-slate-50 py-14 px-4 sm:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <p class="text-xs font-bold tracking-widest text-emeraldBrand-600 uppercase">What's included</p>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 tracking-tight">Co-Living Facilities &amp; Community Events</h2>
+                    <p class="text-slate-600 text-sm mt-2">Everything you need to work, study and settle in. Which facilities each package includes is explained on the <button type="button" onclick="switchTab('checkout')" class="font-semibold text-emeraldBrand-700 underline underline-offset-2">Packages page</button>.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-6">
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-bed" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Furnished private rooms</h3><p class="text-sm text-slate-600 mt-1">Move in with just a suitcase &mdash; every room and studio comes fully furnished.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-wifi" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">High-speed Wi-Fi</h3><p class="text-sm text-slate-600 mt-1">Reliable fibre connection in rooms and common areas, built for video calls and remote work.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-laptop" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Co-working spaces</h3><p class="text-sm text-slate-600 mt-1">Quiet desks and meeting corners for digital nomads who need a proper work setup.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Study pods</h3><p class="text-sm text-slate-600 mt-1">Private pods for international students who need a focused place to study.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Communal kitchens &amp; dining</h3><p class="text-sm text-slate-600 mt-1">Fully equipped kitchens and dining areas to cook and eat together.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-shirt" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Laundry rooms</h3><p class="text-sm text-slate-600 mt-1">On-site washers and dryers, so there is no need to find a laundrette.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Gym &amp; yoga studio</h3><p class="text-sm text-slate-600 mt-1">Stay active without a separate membership &mdash; open to residents.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Rooftop garden</h3><p class="text-sm text-slate-600 mt-1">A green space above the city to relax, read or meet neighbours.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-couch" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">Social lounge</h3><p class="text-sm text-slate-600 mt-1">A relaxed space to meet other residents and settle into life in Singapore.</p></div>
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"><div class="w-10 h-10 rounded-xl bg-emeraldBrand-100 text-emeraldBrand-700 flex items-center justify-center"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div><h3 class="font-bold text-slate-900 mt-3">24/7 security &amp; key-card access</h3><p class="text-sm text-slate-600 mt-1">Round-the-clock security and key-card entry for peace of mind.</p></div>
+                    </div>
+                    <div class="mt-5 bg-slate-900 text-white rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div><p class="font-bold">Weekly community events</p><p class="text-xs text-slate-300 mt-0.5">Resident meet-ups and welcome evenings every week &mdash; dates are shared after you enquire.</p></div>
+                        <button onclick="switchTab('contact')" class="bg-emeraldBrand-600 hover:bg-emeraldBrand-700 border border-teal-300/60 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition">Ask about events &rarr;</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 2. CHECKOUT PAGE VIEW                      -->
+        <!-- ========================================== -->
+        <div id="page-checkout" class="page-tab">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Left Section: Plan Selector & Guest Details (2 Columns) -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Plans Selection Card -->
+                        <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-emeraldBrand-950 p-6 sm:p-8 rounded-3xl shadow-xl text-white relative overflow-hidden border border-slate-800">
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h1 class="text-2xl font-extrabold tracking-tight">Select your plan</h1>
+                                    <p class="text-slate-300 text-xs mt-1">Choose the stay duration and package that best fits your Singapore trip.</p>
+                                </div>
+                                <span class="bg-emeraldBrand-600/30 text-emeraldBrand-300 text-xs px-3 py-1 rounded-full border border-emeraldBrand-500/30">Singapore Housing</span>
+                            </div>
+
+                            <!-- Plans Grid (4 Options) -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                                
+                                <!-- Plan 1: Short-term -->
+                                <div id="plan-short" data-plan="short" onclick="selectPlan('short', 89.00, 'Short-term')" class="plan-card relative bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-4 border-2 border-slate-700 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[230px] group">
+                                    <div class="bg-slate-700/80 text-white text-center py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 group-hover:bg-emeraldBrand-700 transition">
+                                        <span>Short-term</span>
+                                        <i class="fa-solid fa-circle-check check-icon text-xs text-emeraldBrand-400 hidden"></i>
+                                    </div>
+                                    <div class="py-3">
+                                        <p class="font-bold text-xs uppercase tracking-wider text-emerald-300">Info</p>
+                                        <p class="text-[13px] leading-snug text-slate-300 mt-1">Flexible 1&ndash;4 week booking. Furnished room, utilities included, limited access to shared facilities.</p>
+                                        <p class="text-base font-extrabold text-white mt-3">S$89.00 <span class="text-[10px] text-slate-400 font-normal">/ night</span></p>
+                                    </div>
+                                    <button class="w-full bg-slate-700 text-slate-200 text-xs py-2 rounded-xl group-hover:bg-emeraldBrand-600 group-hover:text-white transition font-semibold">Select</button>
+                                </div>
+
+                                <!-- Plan 2: Standard (Most Popular) -->
+                                <div id="plan-standard" data-plan="standard" onclick="selectPlan('standard', 129.90, 'Standard')" class="plan-card relative bg-white text-slate-900 rounded-2xl p-4 border-2 border-emeraldBrand-500 ring-4 ring-emeraldBrand-500/15 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[230px] group shadow-xl shadow-emeraldBrand-900/20">
+                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-emerald-700 to-emerald-500 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-white shadow-lg shadow-emerald-900/25 ring-2 ring-white"><i class="fa-solid fa-crown text-amber-200"></i> Most popular</div>
+                                    <div class="bg-emerald-50 text-emerald-900 text-center py-2 px-3 rounded-xl font-bold text-xs mt-1 flex items-center justify-center gap-1.5 border border-emerald-100">
+                                        <span>Standard</span>
+                                        <i class="fa-solid fa-circle-check check-icon text-xs text-emeraldBrand-300"></i>
+                                    </div>
+                                    <div class="py-3">
+                                        <p class="font-bold text-xs uppercase tracking-wider text-emeraldBrand-700">Info</p>
+                                        <p class="text-[13px] leading-snug text-slate-600 mt-1">Private bedroom in a shared apartment. Fortnightly cleaning, utilities, co-working space, shared kitchen &amp; lounge.</p>
+                                        <p class="text-base font-extrabold text-slate-950 mt-3">S$129.90 <span class="text-[10px] text-slate-500 font-normal">/ night</span></p>
+                                    </div>
+                                    <button class="w-full bg-emeraldBrand-700 hover:bg-emeraldBrand-800 text-white text-xs py-2.5 rounded-xl font-bold shadow-md" aria-label="Selected: Standard package">Selected</button>
+                                </div>
+
+                                <!-- Plan 3: Premium -->
+                                <div id="plan-premium" data-plan="premium" onclick="selectPlan('premium', 199.90, 'Premium')" class="plan-card relative bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-4 border-2 border-slate-700 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[230px] group">
+                                    <div class="bg-slate-700/80 text-white text-center py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 group-hover:bg-emeraldBrand-700 transition">
+                                        <span>Premium</span>
+                                        <i class="fa-solid fa-circle-check check-icon text-xs text-emeraldBrand-400 hidden"></i>
+                                    </div>
+                                    <div class="py-3">
+                                        <p class="font-bold text-xs uppercase tracking-wider text-emerald-300">Info</p>
+                                        <p class="text-[13px] leading-snug text-slate-300 mt-1">Private studio apartment. Weekly cleaning, utilities &amp; internet included, all facilities and a monthly events pass.</p>
+                                        <p class="text-base font-extrabold text-white mt-3">S$199.90 <span class="text-[10px] text-slate-400 font-normal">/ night</span></p>
+                                    </div>
+                                    <button class="w-full bg-slate-700 text-slate-200 text-xs py-2 rounded-xl group-hover:bg-emeraldBrand-600 group-hover:text-white transition font-semibold">Select</button>
+                                </div>
+
+                                <!-- Plan 4: Custom -->
+                                <div id="plan-custom" data-plan="custom" onclick="choosePackage('custom')" class="plan-card relative bg-slate-800/80 hover:bg-slate-800 rounded-2xl p-4 border-2 border-slate-700 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[230px] group">
+                                    <div class="bg-slate-700/80 text-white text-center py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 group-hover:bg-emeraldBrand-700 transition">
+                                        <span>Custom</span>
+                                        <i class="fa-solid fa-circle-check check-icon text-xs text-emeraldBrand-400 hidden"></i>
+                                    </div>
+                                    <div class="py-3">
+                                        <p class="font-bold text-xs uppercase tracking-wider text-emerald-300">Info</p>
+                                        <p class="text-[13px] leading-snug text-slate-300 mt-1">For corporate bookings, long-term stays and accessibility needs. Tell us what you need and we will arrange it with you.</p>
+                                        <p class="text-base font-extrabold text-white mt-3">Price on request</p>
+                                    </div>
+                                    <button class="w-full bg-slate-700 text-slate-200 text-xs py-2 rounded-xl group-hover:bg-emeraldBrand-600 group-hover:text-white transition font-semibold" data-custom="1">Contact us to arrange</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Package help & advice (added after round-1 testing P03) -->
+                        <section aria-labelledby="pkg-help-title" class="bg-white p-5 sm:p-8 rounded-3xl border border-slate-200 shadow-md">
+                            <h2 id="pkg-help-title" class="text-xl font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-circle-question text-emeraldBrand-600" aria-hidden="true"></i><span>Which package is right for me?</span></h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5 text-sm">
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4"><p class="font-bold text-slate-900">Staying 1&ndash;4 weeks?</p><p class="text-slate-600 mt-1">Choose <strong>Short-term</strong> &mdash; flexible dates while you look for something longer.</p></div>
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4"><p class="font-bold text-slate-900">Student or on a budget?</p><p class="text-slate-600 mt-1">Choose <strong>Standard</strong> &mdash; your own bedroom, shared kitchen and co-working space.</p></div>
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4"><p class="font-bold text-slate-900">Want your own space?</p><p class="text-slate-600 mt-1">Choose <strong>Premium</strong> &mdash; a private studio with weekly cleaning and every facility.</p></div>
+                                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4"><p class="font-bold text-slate-900">Company group, long stay or accessibility needs?</p><p class="text-slate-600 mt-1">Choose <strong>Custom</strong> &mdash; <button type="button" onclick="choosePackage('custom')" class="font-semibold text-emeraldBrand-700 underline underline-offset-2">contact us</button> and we will arrange it with you.</p></div>
+                            </div>
+                            <div class="mt-6"><h3 class="font-bold text-slate-900">What is included in each package?</h3><div class="mt-3 overflow-x-auto rounded-xl border border-slate-200"><table class="w-full table-fixed sm:table-auto text-[12px] sm:text-[13px] leading-snug"><caption class="sr-only">Comparison of what each Sky-nest package includes</caption><thead class="bg-slate-50"><tr><th scope="col" class="px-1 sm:px-2 py-2 text-left font-bold text-slate-900"><span class="sr-only">Feature</span></th><th scope="col" class="px-1 sm:px-2 py-2 text-left font-bold text-slate-900">Short-term</th><th scope="col" class="px-1 sm:px-2 py-2 text-left font-bold text-slate-900">Standard</th><th scope="col" class="px-1 sm:px-2 py-2 text-left font-bold text-slate-900">Premium</th><th scope="col" class="hidden sm:table-cell px-1 sm:px-2 py-2 text-left font-bold text-slate-900">Custom</th></tr></thead><tbody class="divide-y divide-slate-200"><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Price</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span class="font-semibold">S$89</span><br>/night</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span class="font-semibold">S$129.90</span><br>/night</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span class="font-semibold">S$199.90</span><br>/night</td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">On request</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Room</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Furnished room</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Private bedroom in shared flat</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Private studio</td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Stay</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700">1&ndash;4 weeks</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Ask us</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Ask us</td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Utilities</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Cleaning</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span aria-hidden="true" class="text-slate-400">&ndash;</span><span class="sr-only">Not included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Every 2 weeks</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Weekly</td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Internet</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span aria-hidden="true" class="text-slate-400">&ndash;</span><span class="sr-only">Not included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span aria-hidden="true" class="text-slate-400">&ndash;</span><span class="sr-only">Not included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Co-working</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Limited</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Kitchen &amp; lounge</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Limited</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">All facilities</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700">Limited</td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span aria-hidden="true" class="text-slate-400">&ndash;</span><span class="sr-only">Not included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr><tr><th scope="row" class="px-1 sm:px-2 py-2 text-left font-semibold text-slate-900 align-top">Events pass</th><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span aria-hidden="true" class="text-slate-400">&ndash;</span><span class="sr-only">Not included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><span aria-hidden="true" class="text-slate-400">&ndash;</span><span class="sr-only">Not included</span></td><td class="px-1 sm:px-2 py-2 align-top text-slate-700"><i class="fa-solid fa-check text-emeraldBrand-700" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="hidden sm:table-cell px-1 sm:px-2 py-2 align-top text-slate-700"><span class="text-slate-600">Agreed</span></td></tr></tbody></table></div><p class="text-xs text-slate-600 mt-2 sm:hidden">Custom: everything is agreed with you &mdash; contact us.</p><p class="text-xs text-slate-600 mt-2">&ndash; = not part of this package. Wi-Fi is available throughout the building for every resident. Prices are examples until confirmed by Sky-nest.</p></div>
+                            <div class="mt-5 divide-y divide-slate-200 border-t border-slate-200 text-sm">
+                                <details class="py-3 group"><summary class="font-semibold text-slate-900 cursor-pointer">Are utilities and internet included?</summary><p class="text-slate-600 mt-2">Utilities are included in every package. High-speed internet is included in Premium, and Wi-Fi is available throughout the building.</p></details>
+                                <details class="py-3"><summary class="font-semibold text-slate-900 cursor-pointer">Does sending an enquiry book a room?</summary><p class="text-slate-600 mt-2">No. An enquiry does not confirm a booking or take payment. Our team replies by email to confirm availability and prices.</p></details>
+                                <details class="py-3"><summary class="font-semibold text-slate-900 cursor-pointer">I have accessibility needs. What do I do?</summary><p class="text-slate-600 mt-2">Choose <strong>Custom</strong>, or select &ldquo;Custom package / accessibility needs&rdquo; on the Contact form. Describe what you need in the message &mdash; for example step-free access or an accessible bathroom. Our team replies to discuss what can be arranged and gives you a quote. Sending a message does not commit you to anything.</p></details>
+                                <details class="py-3"><summary class="font-semibold text-slate-900 cursor-pointer">How long can I stay, and what do I pay in advance?</summary><p class="text-slate-600 mt-2">Short-term stays are 1&ndash;4 weeks. Standard and Premium are for longer stays; our team confirms the minimum stay and any advance payment in its reply to your enquiry.</p></details>
+                                <details class="py-3"><summary class="font-semibold text-slate-900 cursor-pointer">Are there any extra costs?</summary><p class="text-slate-600 mt-2">Utilities are included in every package, and the table above shows what else each one includes. The Enquiry Summary also shows a service fee. Our team confirms the full cost before you decide.</p></details>
+                                <details class="py-3"><summary class="font-semibold text-slate-900 cursor-pointer">Can I change package later?</summary><p class="text-slate-600 mt-2">Yes &mdash; mention it in your enquiry and the team will explain the options for moving between packages.</p></details>
+                            </div>
+                        </section>
+
+                        <!-- Guest Information Form -->
+                        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-md">
+                            <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-id-card text-emeraldBrand-600"></i>
+                                <span>Guest Details</span>
+                            </h3>
+                            <p class="text-sm text-slate-700 -mt-3 mb-6">Fields marked <span class="text-red-700 font-bold">*</span> are required. Optional fields are labelled &ldquo;(optional)&rdquo;.</p>
+                            <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="g-first" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">First name <span class="text-red-700" aria-hidden="true">*</span></label>
+                                        <input id="g-first" name="first_name" autocomplete="given-name" type="text" required placeholder="e.g. Lina" class="w-full border-b-2 border-slate-500 py-2.5 focus:outline-none focus:border-emeraldBrand-600 transition bg-transparent text-slate-900 font-medium text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="g-last" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Last name <span class="text-red-700" aria-hidden="true">*</span></label>
+                                        <input id="g-last" name="last_name" autocomplete="family-name" type="text" required placeholder="e.g. Haddad" class="w-full border-b-2 border-slate-500 py-2.5 focus:outline-none focus:border-emeraldBrand-600 transition bg-transparent text-slate-900 font-medium text-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="g-email" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Email address <span class="text-red-700" aria-hidden="true">*</span></label>
+                                    <input id="g-email" name="email" autocomplete="email" type="email" required placeholder="name@example.com" class="w-full border-b-2 border-slate-500 py-2.5 focus:outline-none focus:border-emeraldBrand-600 transition bg-transparent text-slate-900 font-medium text-sm">
+                                </div>
+                                <div>
+                                    <label for="g-msg" class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Message <span class="font-normal normal-case tracking-normal text-slate-600">(optional)</span></label>
+                                    <textarea id="g-msg" name="message" rows="2" placeholder="Tell us about your stay dates or questions" class="w-full border-2 border-slate-500 rounded-lg px-3 py-2.5 focus:outline-none focus:border-emeraldBrand-600 transition bg-transparent text-slate-900 font-medium text-sm"></textarea>
+                                </div>
+                                <button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="text-sm font-semibold text-emeraldBrand-600 hover:text-emeraldBrand-800"><i class="fa-solid fa-arrow-left text-xs"></i> Back to packages</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Booking Summary (Sidebar) -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-slate-900 text-white p-6 sm:p-7 rounded-3xl shadow-xl sticky top-28 border border-slate-800">
+                            <div class="text-center border-b border-slate-800 pb-4 mb-5">
+                                <h3 class="text-xl font-bold tracking-tight">Enquiry Summary</h3>
+                                <p class="text-xs text-slate-300 mt-1">Choose your arrival date and number of guests</p>
+                            </div>
+
+                            <!-- Calendar Date Picker & Guest Count -->
+                            <div class="flex items-center gap-2 mb-6">
+                                <div class="bg-slate-800 rounded-xl p-2.5 flex items-center gap-2 text-xs flex-1 border border-slate-700">
+                                    <i class="fa-regular fa-calendar text-emeraldBrand-400 text-sm"></i>
+                                    <label for="arrival-date" class="sr-only">Arrival date</label><input id="arrival-date" type="date" class="bg-transparent w-full focus:outline-none text-slate-200 font-medium text-xs [color-scheme:dark]">
+                                </div>
+                                <div class="relative" id="guest-picker-wrap">
+                                    <button type="button" id="guest-picker-toggle" aria-expanded="false" class="bg-slate-800 rounded-xl px-3 py-2.5 flex items-center gap-2 text-xs border border-slate-700 hover:border-emeraldBrand-500 hover:bg-slate-700 transition">
+                                        <i class="fa-solid fa-user-group text-emeraldBrand-400"></i>
+                                        <span id="guest-count-label" class="text-slate-100 font-bold">1 guest</span>
+                                        <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+                                    </button>
+                                    <div id="guest-picker-menu" class="hidden absolute right-0 top-full mt-2 z-50 w-48 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
+                                        <p class="px-3 py-2 text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Number of guests</p>
+                                        <div class="space-y-1"><button type="button" data-guests="1" class="guest-option flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800"><span class="flex items-center gap-3"><i class="fa-solid fa-user w-4 text-emerald-700"></i>1 guest</span><i class="fa-solid fa-check text-emerald-700  guest-check"></i></button><button type="button" data-guests="2" class="guest-option flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800"><span class="flex items-center gap-3"><i class="fa-solid fa-user-group w-4 text-emerald-700"></i>2 guests</span><i class="fa-solid fa-check text-emerald-700 hidden guest-check"></i></button><button type="button" data-guests="3" class="guest-option flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800"><span class="flex items-center gap-3"><i class="fa-solid fa-user-group w-4 text-emerald-700"></i>3 guests</span><i class="fa-solid fa-check text-emerald-700 hidden guest-check"></i></button><button type="button" data-guests="4" class="guest-option flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800"><span class="flex items-center gap-3"><i class="fa-solid fa-user-group w-4 text-emerald-700"></i>4 guests</span><i class="fa-solid fa-check text-emerald-700 hidden guest-check"></i></button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Financial Breakdown -->
+                            <div class="space-y-3 text-xs border-t border-slate-800 pt-4 text-slate-300">
+                                <div class="flex justify-between font-medium">
+                                    <span>Selected package:</span>
+                                    <span id="summary-plan-name" class="font-bold text-emerald-300" aria-live="polite">Standard</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Subtotal (per night)</span>
+                                    <span id="summary-subtotal" class="font-semibold text-white">S$129.90</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Promo code discount</span>
+                                    <span class="font-semibold text-emerald-300">-S$0.00</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Limited Price Discount</span>
+                                    <span class="font-semibold text-emerald-300">-S$0.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Service & Maintenance Fee</span>
+                                    <span class="font-semibold text-white">S$29.00</span>
+                                </div>
+                                <div class="border-t border-slate-800 pt-3 flex justify-between font-extrabold text-base text-white">
+                                    <span>Estimated first night</span>
+                                    <span id="summary-total" class="text-emerald-300">S$158.90</span>
+                                </div>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <button onclick="document.getElementById('checkout-form').requestSubmit()" class="w-full mt-6 bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-3 transition shadow-lg shadow-emeraldBrand-600/30">
+                                <span>Request Package Enquiry</span>
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </button>
+                            <p class="mt-3 text-xs leading-relaxed text-slate-200 bg-slate-800 border-l-4 border-teal-300 rounded-lg px-3 py-2">Submit your details to enquire about this package. Your enquiry does not confirm a booking or payment.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 3. CONTACT PAGE VIEW                       -->
+        <!-- ========================================== -->
+        <div id="page-contact" class="page-tab">
+            <div class="bg-gradient-to-b from-slate-100 to-slate-200 min-h-[82vh] py-12 px-4 sm:px-6 lg:px-8 flex items-center">
+                <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Left Column: Visual Information -->
+                    <div class="space-y-8 pr-0 lg:pr-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emeraldBrand-700 bg-emeraldBrand-100 px-3 py-1 rounded-full">Contact Sky-nest</span>
+                            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight mt-3">
+                                Have a Question?<br><span class="text-emeraldBrand-700">We have Answers</span>
+                            </h1>
+                            <p class="text-slate-600 font-medium text-sm mt-2">Ask about packages, facilities, custom stays or accessibility requirements.</p>
+                            <div class="w-32 h-1 bg-emeraldBrand-600 rounded-full my-3"></div>
+                        </div>
+
+                        <!-- Image Container (Large picture) -->
+                        <div class="bg-slate-300 rounded-2xl w-full aspect-[16/9] min-h-[230px] lg:min-h-[300px] overflow-hidden shadow-xl relative group">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85" alt="Bright open-plan living room and kitchen at Sky-nest" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-4">
+                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-lg border border-slate-700 font-semibold">Sky-nest Headquarters, Singapore</span>
+                            </div>
+                        </div>
+
+                        <!-- Contact Metadata -->
+                        <div class="space-y-6">
+                            <div>
+                                <h2 class="text-xs font-bold text-slate-600 uppercase tracking-widest mb-3">Social Media</h2>
+                                <div class="flex items-center space-x-4">
+                                    <a href="#" aria-label="Sky-nest on Facebook (link to be added)" class="w-11 h-11 bg-slate-900 hover:bg-emeraldBrand-600 text-white rounded-xl flex items-center justify-center text-base transition shadow-md">
+                                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" aria-label="Sky-nest on Instagram (link to be added)" class="w-11 h-11 bg-slate-900 hover:bg-emeraldBrand-600 text-white rounded-xl flex items-center justify-center text-base transition shadow-md">
+                                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" aria-label="Sky-nest on LinkedIn (link to be added)" class="w-11 h-11 bg-slate-900 hover:bg-emeraldBrand-600 text-white rounded-xl flex items-center justify-center text-base transition shadow-md">
+                                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-800 pt-2 border-t border-slate-300">
+                                <div>
+                                    <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Email</span>
+                                    <span class="font-bold text-slate-900 text-sm">skynest@gmail.com</span>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Phone</span>
+                                    <span class="font-bold text-slate-900 text-sm">+65 6789 0123</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Form Container (tell us what do you need) -->
+                    <div class="bg-slate-900 p-6 sm:p-10 rounded-3xl shadow-2xl text-white border border-slate-800">
+                        <div class="text-center mb-8">
+                            <h2 class="text-2xl font-bold tracking-tight">Tell us what you need</h2>
+                            <p class="text-slate-400 text-xs mt-1">Fill out the form and our team will reply by email.</p>
+                        </div>
+                        
+                        <p class="text-xs text-slate-200 mb-4"><span class="text-red-300 font-bold">*</span> indicates a required field</p>
+                        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div><label for="c-first" class="block text-xs font-bold text-slate-100 mb-1.5">First name <span class="text-red-300">*</span></label><input id="c-first" name="first_name" autocomplete="given-name" type="text" placeholder="First name" required class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium"></div>
+                                <div><label for="c-last" class="block text-xs font-bold text-slate-100 mb-1.5">Last name <span class="text-red-300">*</span></label><input id="c-last" name="last_name" autocomplete="family-name" type="text" placeholder="Last name" required class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium"></div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div><label for="c-country" class="block text-xs font-bold text-slate-100 mb-1.5">Country <span class="font-normal text-slate-300">(optional)</span></label><input id="c-country" name="country" autocomplete="country-name" type="text" placeholder="Country" class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium"></div>
+                                <div><label for="c-phone" class="block text-xs font-bold text-slate-100 mb-1.5">Phone number <span class="font-normal text-slate-300">(optional)</span></label><input id="c-phone" name="phone" autocomplete="tel" type="tel" placeholder="Phone number" class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium"></div>
+                            </div>
+                            <div>
+                                <label for="c-email" class="block text-xs font-bold text-slate-100 mb-1.5">Email address <span class="text-red-300">*</span></label>
+                                <input id="c-email" name="email" autocomplete="email" aria-describedby="c-email-hint" type="email" placeholder="name@example.com" required class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium">
+                                <p id="c-email-hint" class="text-[11px] text-slate-300 mt-1">We will reply to this address.</p>
+                            </div>
+                            <div>
+                                <label for="c-type" class="block text-xs font-bold text-slate-100 mb-1.5">Enquiry type <span class="text-red-300">*</span></label>
+                                <select id="c-type" name="enquiry_type" required class="w-full bg-slate-800 text-slate-100 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium">
+                                    <option>Package enquiry</option>
+                                    <option>Facilities enquiry</option>
+                                    <option>General enquiry</option>
+                                    <option value="Custom package / accessibility needs">Custom package / accessibility needs</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="c-msg" class="block text-xs font-bold text-slate-100 mb-1.5">Message <span class="text-red-300">*</span></label>
+                                <textarea id="c-msg" name="message" rows="4" placeholder="Tell us how we can help" required class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldBrand-500 border border-slate-400 text-sm font-medium"></textarea>
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit" class="w-full bg-emeraldBrand-600 hover:bg-emeraldBrand-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-emeraldBrand-600/30 text-sm">
+                                    Send enquiry
+                                </button>
+                                <p class="text-center text-xs text-slate-200 mt-3">After you submit, you will see a confirmation message and a reply by email.</p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 4. ABOUT PAGE VIEW                         -->
+        <!-- ========================================== -->
+        <div id="page-about" class="page-tab">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+                
+                <!-- About Sky-nest Title & Client Review Section -->
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 border-b border-slate-200 pb-10">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold uppercase tracking-widest text-emeraldBrand-700 bg-emeraldBrand-100 px-3 py-1 rounded-full">About Us</span>
+                        <h1 class="text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">About Sky-nest</h1>
+                        <p class="text-slate-600 mt-2 text-base leading-relaxed">Flexible co-living in Singapore for young professionals, digital nomads and international students &mdash; furnished rooms, shared workspaces and a real community.</p>
+                    </div>
+
+                    <!-- Client Review Component -->
+                    <div class="w-full lg:w-96 bg-white p-6 rounded-2xl border border-slate-200 shadow-md">
+                        <div class="flex items-center gap-1 text-goldAccent-500 mb-2 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h2 class="font-bold text-slate-900 text-sm mb-1">Client review</h2>
+                        <p class="text-xs text-slate-600 italic leading-relaxed">"Sky-nest provided an exceptional stay during my executive relocation to Singapore. Pristine service, smooth booking, and high-end living spaces!"</p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600 font-medium">
+                            <span>Sample review &mdash; to be replaced with a real resident review</span>
+                            <i class="fa-solid fa-circle-check text-emeraldBrand-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Pictures Section -->
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-regular fa-images text-emeraldBrand-600"></i>
+                        <span>Company Pictures</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <div class="md:col-span-5 bg-slate-200 rounded-2xl h-72 overflow-hidden shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Sky-nest residence at dusk with an illuminated swimming pool" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-lg border border-slate-700 font-medium">Sky-nest Residence</div>
+                        </div>
+                        <div class="md:col-span-7 bg-slate-200 rounded-2xl h-72 overflow-hidden shadow-md relative group">
+                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80" alt="Aerial view of boats on turquoise water beside a sandy beach" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-xs px-3 py-1 rounded-lg border border-slate-700 font-medium">Singapore Landmark Properties</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Our Story -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+                    <h3 class="text-2xl font-extrabold text-slate-900">Our Story</h3>
+                    <div class="w-full h-0.5 bg-slate-200"></div>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed pt-2">
+                        Sky-nest was created for people who move to Singapore for work or study and need a home quickly. Instead of searching for furniture, internet and friends separately, residents move into a furnished room with high-speed Wi-Fi, co-working spaces and weekly community events already in place. Short-term, long-term and custom stays &mdash; including corporate bookings and residents with accessibility needs &mdash; are arranged directly with our team.
+                    </p>
+                </div>
+
+                <!-- Numerical Statistics Bar -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center pt-2">
+                    <div class="p-8 bg-slate-900 text-white rounded-3xl shadow-xl border border-slate-800">
+                        <div class="text-4xl font-extrabold text-emeraldBrand-400 mb-1">+100K</div>
+                        <div class="text-slate-300 font-bold text-sm">Clients</div>
+                    </div>
+                    <div class="p-8 bg-slate-900 text-white rounded-3xl shadow-xl border border-slate-800">
+                        <div class="text-4xl font-extrabold text-goldAccent-400 mb-1 flex items-center justify-center gap-2">
+                            <span>5</span>
+                            <span class="text-2xl">⭐</span>
+                        </div>
+                        <div class="text-slate-300 font-bold text-sm">Client Rate</div>
+                    </div>
+                    <div class="p-8 bg-slate-900 text-white rounded-3xl shadow-xl border border-slate-800">
+                        <div class="text-4xl font-extrabold text-emeraldBrand-400 mb-1">+400</div>
+                        <div class="text-slate-300 font-bold text-sm">Team Members</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center">
+                
+                <!-- Left Links -->
+                <div class="space-y-3">
+                    <div><button type="button" onclick="showModal('Cookie Policy', 'Sky-nest uses standard browser cookies to personalize your reservation experience.')" class="hover:text-emeraldBrand-400 text-xs font-semibold text-slate-300 transition">Cookie Policy</button></div>
+                    <div><button type="button" onclick="switchTab('home')" class="hover:text-emeraldBrand-400 text-xs font-semibold text-slate-300 transition">Properties</button></div>
+                </div>
+
+                <!-- Center Social Links -->
+                <div class="text-center md:border-x border-slate-800 px-4 py-2">
+                    <h2 class="text-[10px] font-bold uppercase tracking-widest text-slate-300 mb-4">FOLLOW US ON SOCIAL MEDIA</h2>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" aria-label="Sky-nest on Facebook (link to be added)" class="w-10 h-10 bg-slate-800 hover:bg-emeraldBrand-600 text-slate-200 rounded-full flex items-center justify-center transition shadow">
+                                        <i class="fa-brands fa-facebook-f text-sm" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Sky-nest on Instagram (link to be added)" class="w-10 h-10 bg-slate-800 hover:bg-emeraldBrand-600 text-slate-200 rounded-full flex items-center justify-center transition shadow">
+                                        <i class="fa-brands fa-instagram text-sm" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Sky-nest on LinkedIn (link to be added)" class="w-10 h-10 bg-slate-800 hover:bg-emeraldBrand-600 text-slate-200 rounded-full flex items-center justify-center transition shadow">
+                                        <i class="fa-brands fa-linkedin-in text-sm" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Links -->
+                <div class="space-y-3 md:text-right">
+                    <div><button type="button" onclick="showModal('Terms of Service', 'Standard Singapore accommodation terms apply to all guest bookings.')" class="hover:text-emeraldBrand-400 text-xs font-semibold text-slate-300 transition">Terms of Service</button></div>
+                    <div><button type="button" onclick="showModal('Privacy Policy', 'Your personal data is encrypted and handled securely in accordance with PDPA guidelines.')" class="hover:text-emeraldBrand-400 text-xs font-semibold text-slate-300 transition">Privacy Policy</button></div>
+                </div>
+
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-slate-800 text-center text-xs text-slate-400">
+                &copy; 2026 Sky-nest Co-Living Spaces, Singapore. All rights reserved. Photos: Unsplash (Unsplash Licence).
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Modal Dialog (Replacing alert()) -->
+    <div id="custom-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center shadow-2xl mx-4 transform scale-95 transition-transform duration-300" id="modal-box">
+            <div class="w-12 h-12 bg-emeraldBrand-100 text-emeraldBrand-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+            <h2 class="text-lg font-bold text-slate-900 mb-2" id="modal-title">Notification</h2>
+            <p class="text-xs text-slate-600 mb-6 leading-relaxed" id="modal-message">Request processed successfully.</p>
+            <button id="modal-close" onclick="closeModal()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition text-sm">Close</button>
+        </div>
+    </div>
+
+    <!-- Application JavaScript Logic -->
+    <script src="js/script.js"></script>
+</body>
+</html>
